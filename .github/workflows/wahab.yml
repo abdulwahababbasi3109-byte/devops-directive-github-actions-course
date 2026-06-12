@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - staging 
+env: 
+  APP_ENV: "dev"
 jobs: 
   build: 
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Print any file 
-        run: cat README.md
+        run: echo "AApp is conencito to $APP_ENV"
