@@ -1,9 +1,12 @@
 
 name: Wahab Workflow
-on: push 
+on: 
+  push:
+    branches:
+      - staging 
 jobs: 
   build: 
     runs-on: ubuntu-24.04
     steps:
       - name: Build Step
-        run: echo "Whaatttttttttttttt"
+        run: echo "Hello, ${{vars.MY_NAME}}"
