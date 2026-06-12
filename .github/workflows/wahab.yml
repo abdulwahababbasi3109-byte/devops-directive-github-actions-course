@@ -8,5 +8,7 @@ jobs:
   build: 
     runs-on: ubuntu-24.04
     steps:
-      - name: Build Step
-        run: echo "Hello, ${{vars.MY_NAME}}"
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Print any file 
+        run: cat README.md
