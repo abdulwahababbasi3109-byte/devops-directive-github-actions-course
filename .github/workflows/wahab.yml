@@ -9,9 +9,18 @@ env:
 jobs: 
   build: 
     runs-on: ubuntu-24.04
+    outputs:
+      version: ${{steps.Step1.outputs.version}}
     steps:
       - name: Outputting the code
         id: Step1
         run: echo "version=1.0.0" >> $GITHUB_OUTPUT
       - name: Step2 getting the code
         run:  echo "Ouptt is ${{steps.Step1.outputs.version}}"
+
+  test:
+    runs-on: ubuntu-24.04
+    needs: build
+    steps:
+      - name: Printing the output of above
+        run: echo "Pringitnt hte above outptu ${{needs.build.outputs.version}}"
