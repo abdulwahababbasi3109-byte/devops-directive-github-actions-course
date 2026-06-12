@@ -1,0 +1,9 @@
+
+name: Wahab Workflow
+on: push 
+jobs: 
+  build: 
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Build Step
+        run: echo "Whaatttttttttttttt"
